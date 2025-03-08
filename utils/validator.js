@@ -25,4 +25,23 @@ name:joi.string().email(),
 
 })
 const ticketValid = validator(ticketValidation)
-export { comingSoon , ticketValid};
+
+
+const reset_password = joi.object({
+    email: joi.string().required(),
+    newPassword:joi.string().required(),
+    OTP: joi.string(). min(6).max(6). required(),
+})
+
+const reset_password_validation = validator(reset_password)
+const schema_validator = joi.object({
+    name: joi.string().required(),
+    email: joi.string().email().required(),
+    password: joi.string().max(10).min(3).required(),
+    role: joi.string(),
+
+});
+
+const validate = validator(schema_validator);
+
+export {validate, comingSoon , ticketValid, reset_password_validation };

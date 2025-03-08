@@ -5,6 +5,7 @@ const nowPlayingSchema= mongoose.Schema({
     movieName:{type:String, },
     moviePicture:{type:String},
     movieWatchingDate:{type:Date},
+    moviePrice:{type:String},
     movieDescription:{type:String}
 })
 

@@ -6,6 +6,7 @@ import nowPlayingRoute from "./routes/NowPlayingRoutes.js"
 import comingMoviesRoutes from "./routes/comingsoonRoute.js"
 import connectcloudinary from "./config/cloudinary.js"
 import topPlayingMovie from "./routes/topPlayingRoute.js"
+import authRoutes from "./routes/authRoutes.js"
 const app = express()
 
 connectDB()
@@ -18,6 +19,7 @@ app.use(bodyParser.json())
 app.use("/api",comingMoviesRoutes)
 app.use("/api",nowPlayingRoute)
 app.use("/api",topPlayingMovie)
+app.use("/api",authRoutes)
 app.listen(5000, () =>{
     console.log("movie server is running")
 })

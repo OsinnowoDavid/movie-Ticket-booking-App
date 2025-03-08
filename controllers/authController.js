@@ -1,9 +1,9 @@
 import userModel from "../models/userSchema.js";
-// import adminModel from "../models/adminSchema.js"; // Corrected import
+
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import {validate} from "./validator.js";
-import {reset_password_validation} from "./validator.js";
+import {validate} from "../utils/validator.js";
+import {reset_password_validation} from "../utils/validator.js";
 import transporter from "../config/nodemailer.js";
 
 //  register users
@@ -182,13 +182,7 @@ const verifyEmail = async (req, res) => {
     }
 };
 
-// const isauthenticate = async (req, res) => {
-//     try {
-//         return res.json({ success: true, message: "user is authenticated" });
-//     } catch (error) {
-//         return res.json({ success: false, message: error.message });
-//     }
-// };
+
 
 const sendResetOpt = async (req, res) => {
     const { email } = req.body; // Changed adminEmail to email
