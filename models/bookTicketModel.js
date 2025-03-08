@@ -5,7 +5,7 @@ const ticketSchema = new mongoose.Schema({
 movieName:{type:String, required:true},
 movieDate:{type:String, required:true},
 movieTime:{type:String, required:true},
-
+moviePrice :{type:String, required:true},
 seatNo:{type:String, required:true},
 
 email:{type:String, required:true},

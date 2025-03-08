@@ -4,8 +4,19 @@ const movieAggregate = async (req,res) =>{
     try {
         const stat =  await ticketModel.aggregate([
             {
-                $group:{
+                $lookup:{
 
+                    from:"movies",
+                    localField:"movieName",
+                    foreignField:"movieName",
+                    as:"movie"
+                }
+            },
+            {
+                $addFields:{
+                    movie:{
+                        $arrayElemAt:["$movie",0]
+                    }
                 }
             }
         ])
