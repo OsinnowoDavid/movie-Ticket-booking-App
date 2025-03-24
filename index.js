@@ -14,7 +14,7 @@ connectcloudinary()
 
 // Configure CORS
 const corsOptions = {
-    origin: ['http://localhost:19000', 'http://localhost:8081'], // Allow React Native development server
+    origin: ['http://localhost:19000', 'http://localhost:8081', "exp://172.20.10.4:8081"], // Allow React Native development server
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204
