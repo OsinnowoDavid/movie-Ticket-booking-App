@@ -30,7 +30,7 @@ app.use("/api", comingMoviesRoutes)
 app.use("/api", nowPlayingRoute)
 app.use("/api", topPlayingMovie)
 app.use("/api", authRoutes)
-
+ app.get("/", (req, res) => { res.send("Welcome to the movie server") })    
 app.listen(port, () => {
     console.log("movie server is running")
 })
