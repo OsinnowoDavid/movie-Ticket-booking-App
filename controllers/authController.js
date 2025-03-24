@@ -31,12 +31,11 @@ const register = async (req, res) => {
             password: hashPassword,
         });
         await user.save();
-        res.sendStatus(200).json({ success: true, message: "Registered successfully" });
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: email, // Ensure email is correctly passed here
-            subject: "Welcome to E-learning ",
-            text: `Welcome to E-learning. Your account has been created with email id: ${email} and password: ${password}`,
+            subject: "HELLO from Osinnowo David",
+            text: `Assessment project. Your account has been created with email id: ${email} and password: ${password}`,
         });
 
         res.status(200).json({ success: true, message: "Registered successfully" });

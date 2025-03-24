@@ -20,6 +20,8 @@ const corsOptions = {
     optionsSuccessStatus: 204
 };
 
+const port = process.env.PORT
+
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(bodyParser.json())
@@ -29,6 +31,6 @@ app.use("/api", nowPlayingRoute)
 app.use("/api", topPlayingMovie)
 app.use("/api", authRoutes)
 
-app.listen(5000, () => {
+app.listen(port, () => {
     console.log("movie server is running")
 })
